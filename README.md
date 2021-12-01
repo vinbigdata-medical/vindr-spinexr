@@ -1,4 +1,4 @@
-[<img src=".github/logo-VinBigData-2020-ngang-blue.png" width="300">](https://vindr.ai/)
+[<div style="text-align:center"><img src=".github/logo-VinBigData-2020-ngang-blue.png" width="300"></div>](https://vindr.ai/)
 
 # VinDr-SpineXR: A deep learning framework forspinal lesions detection and classification from radiographs
 <!-- <div align="center"> -->
