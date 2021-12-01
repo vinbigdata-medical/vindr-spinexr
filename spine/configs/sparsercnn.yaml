@@ -1,0 +1,65 @@
+SEED: 1999
+MODEL:
+  META_ARCHITECTURE: "SparseRCNN"
+  WEIGHTS: "./pretrained/r50_100pro_3x_model.pth"
+  BACKBONE:
+    NAME: "build_resnet_fpn_backbone"
+  RESNETS:
+    DEPTH: 50
+    STRIDE_IN_1X1: False
+    OUT_FEATURES: ["res2", "res3", "res4", "res5"]
+  FPN:
+    IN_FEATURES: ["res2", "res3", "res4", "res5"]
+  ROI_HEADS:
+    IN_FEATURES: ["p2", "p3", "p4", "p5"]
+  ROI_BOX_HEAD:
+    POOLER_TYPE: "ROIAlignV2"
+    POOLER_RESOLUTION: 7
+    POOLER_SAMPLING_RATIO: 2
+  SparseRCNN:
+    NUM_PROPOSALS: 100
+    NUM_CLASSES: 7
+
+SPINE:
+  ARCH: "sparse_rcnn"
+  FINDINGS: [
+    "Osteophytes", 
+    "Surgical implant", 
+    "Spondylolysthesis",
+    "Foraminal stenosis",
+    "Disc space narrowing",
+    "Vertebral collapse",
+    "Other lesions",
+  ]
+  DATA_MAPPER: "SpineAutoAugmentMapper"
+  DATASET_DICT_FN: "SpineDatasetFunction"
+  AUTO_AUGMENT: "v2"
+  TRAIN_METADATA: "./data/train_meta.csv"
+  TRAIN_ANNOTATION: "./data/annotations/train.csv"
+  TRAIN_DATA_FOLDER: "./data/train_pngs"
+  TEST_METADATA: "./data/test_meta.csv"
+  TEST_ANNOTATION: "./data/annotations/test.csv"
+  TEST_DATA_FOLDER: "./data/test_pngs"
+OUTPUT_DIR: "./outputs"
+DATASETS:
+  TRAIN: ("spine_train",)
+  TEST: ("spine_test",)
+DATALOADER:
+  SAMPLER_TRAIN: "RepeatFactorTrainingSampler"
+  REPEAT_THRESHOLD: 0.1
+  NUM_WORKERS: 4 #8
+  FILTER_EMPTY_ANNOTATIONS: True
+
+SOLVER:
+  BASE_LR: 0.001
+  STEPS: (30000,)
+  MAX_ITER: 50000
+  IMS_PER_BATCH: 4 #16
+  CHECKPOINT_PERIOD: 1000
+  CLIP_GRADIENTS:
+    ENABLED: True
+
+TEST:
+  EVAL_PERIOD: 100 #500
+VIS_PERIOD: 500
+

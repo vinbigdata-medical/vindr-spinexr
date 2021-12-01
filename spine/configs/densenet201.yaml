@@ -1,0 +1,47 @@
+SEED: 1999
+SPINE:
+  TASK: "classification"
+  ARCH: ""
+  DATA_MAPPER: "SpineClsDatasetMapper2"
+  TRAIN_METADATA: "./data/train_meta.csv"
+  TRAIN_ANNOTATION: "./data/annotations/train.csv"
+  TRAIN_DATA_FOLDER: "./data/train_pngs"
+  TEST_METADATA: "./data/test_meta.csv"
+  TEST_ANNOTATION: "./data/annotations/test.csv"
+  TEST_DATA_FOLDER: "./data/test_pngs"
+OUTPUT_DIR: "./outputs"
+
+MODEL:
+  WEIGHTS: ""
+  META_ARCHITECTURE: "Classifier"
+  CLASSIFIER:
+    CLASSES: ["Abnormal"]
+    LOSS_NAMES: ["BCE",]
+    IN_FEATURES: ["dense4"]
+    INPUT_SIZE: 224
+  BACKBONE: 
+    NAME: "DenseNet"
+  DENSENET:
+    OUT_FEATURES: ["dense4"]
+    DEPTH: 201
+CLASSIFICATION:
+  BOOTSTRAP: True
+
+DATASETS:
+  TRAIN: ("spine_cls_train",)
+  TEST: ("spine_cls_test",)
+DATALOADER:
+  ASPECT_RATIO_GROUPING: True
+  NUM_WORKERS: 8
+
+SOLVER:
+  STEPS: (5000,7500)
+  MAX_ITER: 10000
+  BASE_LR: 0.01
+  IMS_PER_BATCH: 4 #32
+  CHECKPOINT_PERIOD: 250
+  CLIP_GRADIENTS:
+    ENABLED: True
+
+TEST:
+  EVAL_PERIOD: 100 #250

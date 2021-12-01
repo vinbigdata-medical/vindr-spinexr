@@ -1,0 +1,9 @@
+data/*
+!data/README.md
+
+pretrained/*
+!pretrained/README.md
+
+outputs/*
+.vscode/*
+*__pycache__*

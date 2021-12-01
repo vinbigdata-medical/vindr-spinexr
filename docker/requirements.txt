@@ -1,0 +1,17 @@
+tensorboard
+cmake
+torch==1.7.1 
+torchvision==0.8.2
+git+https://github.com/facebookresearch/fvcore.git@cf76bbf85437f85443d6ef0c97e920d1a069b5ce
+git+https://github.com/facebookresearch/detectron2.git@4841e70ee48da72c32304f9ebf98138c2a70048d
+timm==0.3.4
+scipy==1.5.4
+omegaconf==2.0.6
+scikit-learn==0.24.1
+git+https://github.com/rwightman/efficientdet-pytorch.git@645d84a6f0cd837703f98f48179a06c354902515
+Pillow==7.2.0
+pydicom==2.1.1
+opencv-python==4.3.0.36
+opencv-python-headless==4.3.0.36
+pandas
+tqdm
