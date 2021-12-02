@@ -51,7 +51,7 @@ This source code in released under [Apache 2.0 License](LICENSE).
 
 
 # Acknowledgment
-This implementation is based on [Detection2](https://github.com/facebookresearch/detectron2) codebase.\
+This implementation is based on [Detectron2](https://github.com/facebookresearch/detectron2) codebase.\
 Thanks to [Benjin Zhu](https://github.com/poodarchu) for [numpy implementation](https://github.com/poodarchu/learn_aug_for_object_detection.numpy/tree/add-license-1) of [AutoAugment for object detection](https://link.springer.com/chapter/10.1007%2F978-3-030-58583-9_34). \
 Thanks to [Ross Wightman](https://github.com/rwightman) for [his implementation](https://github.com/rwightman/efficientdet-pytorch) of [EfficientDet](https://openaccess.thecvf.com/content_CVPR_2020/html/Tan_EfficientDet_Scalable_and_Efficient_Object_Detection_CVPR_2020_paper.html).\
 Thanks to authors of [Sparse R-CNN](https://github.com/PeizeSun/SparseR-CNN).
