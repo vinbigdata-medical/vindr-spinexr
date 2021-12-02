@@ -1,14 +1,10 @@
-[<div style="text-align:center"><img src=".github/logo-VinBigData-2020-ngang-blue.png" width="300"></div>](https://vindr.ai/)
-
-# VinDr-SpineXR: A deep learning framework forspinal lesions detection and classification from radiographs
-<!-- <div align="center"> -->
+[<p align="center"><img src=".github/logo-VinBigData-2020-ngang-blue.png" width="300"></p>](https://vindr.ai/)
+# VinDr-SpineXR: A deep learning framework for spinal lesions detection and classification from radiographs
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-<!-- </div> -->
-
 # Paper 
- [VinDr-SpineXR: A deep learning framework forspinal lesions detection and classification from radiographs](https://link.springer.com/chapter/10.1007/978-3-030-87240-3_28) \
+ [VinDr-SpineXR: A deep learning framework for spinal lesions detection and classification from radiographs](https://link.springer.com/chapter/10.1007/978-3-030-87240-3_28) \
  \[[preprint](https://arxiv.org/abs/2106.12930), [poster](https://drive.google.com/file/d/1IiLivi_VQ91W4R7RJuEz2Fw7E_df8evE/view?usp=sharing)\]
 # Installation
 To install in Docker container, see [Docker instruction](docker/README.md)
