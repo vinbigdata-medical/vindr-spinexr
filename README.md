@@ -20,7 +20,9 @@ The dataset can be downloaded via our project on Physionet. Subsequently, images
 
 # Training
 For each experiment outputs will be stored in `outputs/--exp-name--`. Refer to [train.sh](train.sh) for more example scripts.
-To train Sparse R-CNN, COCO pre-trained checkpoint has to be manually downloaded (see [here](data/README.md) for detail).
+
+To train Sparse R-CNN, COCO pre-trained checkpoint has to be manually downloaded. Please go to sparse-rcnn official [coco-pretrained models](https://drive.google.com/drive/u/1/folders/19UaSgR4OwqA-BhCs_wG7i6E-OXC5NR__) to download the 'r101_100pro_3x_model.pth' to './pretrained/'.
+
 It takes about one day to train Sparse R-CNN on a V100 32GiB.
 
 ```bash
